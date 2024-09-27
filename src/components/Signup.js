@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { getAuth } from "firebase/auth";
@@ -14,7 +15,6 @@ const Signup = () => {
   const handleSignup = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-alert("User signed up successfully!");
       navigate("/");
     } catch (error) {
       console.error("Error signing up: ", error.message);
@@ -29,7 +29,6 @@ alert("User signed up successfully!");
           Sign Up
         </h1>
         
-        <form onSubmit={handleSignup}>
         <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" value={email}
@@ -44,12 +43,11 @@ alert("User signed up successfully!");
           
           
           <button
-            type="submit"
+            onClick={handleSignup}
             className="btn btn-primary"
             >
             Sign Up
           </button>
-        </form>
         
        
 
