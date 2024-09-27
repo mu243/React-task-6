@@ -22,11 +22,6 @@ const Signup = () => {
     }
   };
 
-  const handlelogin  = async (e) => {
-    e.preventDefault();
-    navigate("/");
-  }
-
   return (
     <div className="ms-2">
     <div >
@@ -62,12 +57,12 @@ const Signup = () => {
         <div >
           <p >
             Already have an account?{" "}
-            <button
-              onClick={handlelogin}
+            <a
+              href="/"
               className=" hover:underline"
             >
               Log in
-            </button>
+            </a>
           </p>
         </div>
       </div>
